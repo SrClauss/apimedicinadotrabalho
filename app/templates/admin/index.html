@@ -1,0 +1,48 @@
+{% extends 'admin/master.html' %}
+
+{% block body %}
+<div class="container">
+    <div class="jumbotron">
+        <h1>Painel de Administração</h1>
+        <p class="lead">Bem-vindo ao sistema de administração.</p>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Usuários</h5>
+                    <p class="card-text">Total: {{ stats.users }}</p>
+                    <a href="{{ url_for('user.index_view') }}" class="btn btn-primary">
+                        Gerenciar Usuários
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Empresas</h5>
+                    <p class="card-text">Total: {{ stats.companies }}</p>
+                    <a href="{{ url_for('company.index_view') }}" class="btn btn-success">
+                        Gerenciar Empresas
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Exames</h5>
+                    <p class="card-text">Total: {{ stats.exams }}</p>
+                    <a href="{{ url_for('exam.index_view') }}" class="btn btn-info">
+                        Gerenciar Exames
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

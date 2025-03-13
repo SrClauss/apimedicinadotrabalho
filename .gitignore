@@ -1,0 +1,44 @@
+# Ambiente virtual
+venv/
+env/
+
+# Arquivos e pastas do VSCode
+.vscode/
+
+# Arquivos de compilação
+__pycache__/
+*.py[cod]
+*.so
+
+# Pastas de build
+build/
+dist/
+
+# Arquivos de log
+*.log
+
+# Arquivos de configuração específicos do sistema
+*.env
+
+# Arquivos de banco de dados SQLite
+*.sqlite3
+
+# Arquivos de cache do Jupyter Notebook
+.ipynb_checkpoints/
+
+# Arquivos de cache do sistema
+.DS_Store
+Thumbs.db
+
+# Arquivos de configuração do sistema operacional
+*.swp
+*.swo
+
+# Arquivos de configuração do Python
+*.pyo
+*.pyd
+
+# Arquivos de configuração do editor
+*.sublime-project
+*.sublime-workspace
+.idea/
