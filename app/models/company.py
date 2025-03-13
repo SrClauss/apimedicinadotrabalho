@@ -2,7 +2,7 @@
 from bcrypt import checkpw, gensalt, hashpw
 from flask import current_app
 import jwt
-from sqlalchemy import Column, String, DateTime, func
+from sqlalchemy import Column, String, DateTime, Text, func
 from sqlalchemy.orm import relationship, declarative_base
 from datetime import datetime, timedelta
 import pytz
@@ -15,7 +15,7 @@ class Company(Base):
     __tablename__ = 'companies'
     id = Column(String(26), primary_key=True, default=lambda: str(ulid.new()))
     name = Column(String(100), nullable=False)
-    address = Column(String(200), nullable=False)
+    address = Column(Text, nullable=False)
     phone = Column(String(20), nullable=False)
     cnpj = Column(String(14), unique=True, nullable=False)
     email = Column(String(120), unique=True, nullable=False)
@@ -44,7 +44,7 @@ class PendingCompany(Base):
     __tablename__ = 'pending_companies'
     id = Column(String, primary_key=True, default=lambda: str(ulid.new()))
     name = Column(String, nullable=False)
-    address = Column(String, nullable=False)
+    address = Column(Text, nullable=False)
     phone = Column(String, nullable=False)
     cnpj = Column(String, unique=True, nullable=False)
     email = Column(String, unique=True, nullable=False)

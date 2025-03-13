@@ -1,5 +1,5 @@
 # app/models/user.py
-from sqlalchemy import Boolean, Column, String, DateTime, func, Integer
+from sqlalchemy import Boolean, Column, String, DateTime, Text, func, Integer
 from sqlalchemy.orm import relationship, declarative_base
 from bcrypt import hashpw, gensalt, checkpw
 from flask import current_app
@@ -36,7 +36,7 @@ class User(Base):
     name = Column(String(50), unique=True, nullable=False)
     password_hash = Column(String(128), nullable=False)
     email = Column(String(120), unique=True, nullable=False)
-    address = Column(String(200), nullable=True)
+    address = Column(Text, nullable=True)
     phone = Column(String(20), nullable=True)
     cpf = Column(String(14), unique=True, nullable=True)
     role = Column(Integer, default=UserRole.WORKER, nullable=False)
@@ -73,7 +73,7 @@ class PendingUser(Base):
     id = Column(String, primary_key=True, default=lambda: str(ulid.new()))
     name = Column(String, nullable=False)
     email = Column(String, unique=True, nullable=False)
-    address = Column(String(200), nullable=True)
+    address = Column(Text, nullable=True)
     phone = Column(String(20), nullable=True)
     cpf = Column(String(14), unique=True, nullable=True)
     password_hash = Column(String, nullable=False)
